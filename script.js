@@ -525,6 +525,12 @@ async function submitSurvey(payload) {
     We cannot read the response body, so we optimistically treat a network-error-free
     request as success.
   */
+  // The request below is sent with mode "no-cors", so an unconfigured URL would
+  // resolve relative to the page and still look like a success. Fail loudly instead.
+  if (!/^https:\/\/script\.google\.com\//.test(GOOGLE_SCRIPT_URL)) {
+    throw new Error('GOOGLE_SCRIPT_URL is not configured');
+  }
+
   const params = new URLSearchParams();
   params.append('payload', JSON.stringify(payload));
 
