@@ -3,7 +3,7 @@
    =============================================================
    CONFIGURATION — Google Apps Script Web App URL:
    ============================================================= */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcoQ7K3NeoikZxNs-gFJx61ST7LGQQrAN5nFUaKIv_C5kcCF7tUX9o6Cpa3E5CBEyOBw/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZt29ZW9daN_12ZSUSOEzFiKtFTHOOSKqKUuzHa_5rdYNOuZ7a1fGazv_yQlyk9lAI/exec";
 
 /* ============================================================= */
 
