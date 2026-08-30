@@ -64,7 +64,15 @@
 
             <div class="field-group full-width required">
               <label for="department" class="field-label">שם המחלקה</label>
-              <input type="text" id="department" name="department" class="field-input" placeholder="למשל: מכירות, פרה־סייל, PS, ניהול לקוחות" required />
+              <select id="department" name="department" class="field-select" required>
+                <option value="">-- בחרו --</option>
+                <option value="אבטחת מידע וסייבר">אבטחת מידע וסייבר</option>
+                <option value="שו״ב ו-OT">שו״ב ו-OT</option>
+                <option value="Professional Services – Chen &amp; Moti">Professional Services – Chen &amp; Moti</option>
+                <option value="PS Tubul Team">PS Tubul Team</option>
+                <option value="מנהלי מוצר">מנהלי מוצר</option>
+                <option value="אחר">אחר</option>
+              </select>
               <span class="field-error" id="department-error">שדה זה הוא חובה</span>
             </div>
             <div class="field-group">
