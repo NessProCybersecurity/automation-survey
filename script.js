@@ -13,7 +13,7 @@ const PROCESS_SECTIONS_SELECTOR = '.form-section[data-section="2"], .form-sectio
 
 // Required process fields, listed in section order so the first
 // invalid one found is also the earliest section to jump back to.
-const PROCESS_REQUIRED_FIELD_IDS = ['processName', 'processGoal', 'currentSteps', 'mainPainPoint'];
+const PROCESS_REQUIRED_FIELD_IDS = ['salesStage', 'processName', 'processGoal', 'currentSteps', 'mainPainPoint'];
 
 let currentSection = 1;
 let isSubmitting = false;
@@ -338,6 +338,7 @@ function collectRespondentData() {
 /* The process currently in the form fields (steps 2-3: פרטי התהליך + סיכום חופשי). */
 function collectProcessData() {
   return {
+    salesStage:            document.getElementById('salesStage').value,
     processName:           val('processName'),
     processGoal:           val('processGoal'),
     currentOwner:          val('currentOwner'),
