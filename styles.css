@@ -560,6 +560,25 @@ body {
   margin-bottom: 14px;
 }
 
+/* Step 2's "add another process" panel — reads as an action, not a question.
+   It is the last .process-group in the section, so it supplies its own
+   padding (the :last-child rule above strips the shared one). */
+.inline-add {
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-top: 8px;
+}
+
+.inline-add .process-group__title {
+  margin-bottom: 4px;
+}
+
+.inline-add .process-group__desc {
+  margin-bottom: 14px;
+}
+
 .process-group .fields-grid {
   margin-top: 14px;
 }

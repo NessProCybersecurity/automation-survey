@@ -24,6 +24,7 @@ const form = document.getElementById('surveyForm');
 const btnNext = document.getElementById('btnNext');
 const btnPrev = document.getElementById('btnPrev');
 const btnAddProcess = document.getElementById('btnAddProcess');
+const btnAddProcessInline = document.getElementById('btnAddProcessInline');
 const btnSubmit = document.getElementById('btnSubmit');
 const finalActions = document.getElementById('finalActions');
 const progressBarFill = document.getElementById('progressBarFill');
@@ -480,7 +481,11 @@ function showToast(message) {
 /* ============================================================
    Add another process
    ============================================================ */
-btnAddProcess.addEventListener('click', () => {
+/* Banks the process currently on screen and clears the process fields so
+   another one can be filled. Respondent details in step 1 are untouched, so
+   every banked process is submitted as its own row sharing them. Reachable
+   from step 2 and from the final step. */
+function addAnotherProcess() {
   if (!validateProcessFields()) return;
 
   processesList.push(collectProcessData());
@@ -488,7 +493,10 @@ btnAddProcess.addEventListener('click', () => {
   renderProcessTracker();
   showToast('התהליך נוסף. ניתן למלא תהליך נוסף.');
   showSection(FIRST_PROCESS_SECTION);
-});
+}
+
+btnAddProcess.addEventListener('click', addAnotherProcess);
+if (btnAddProcessInline) btnAddProcessInline.addEventListener('click', addAnotherProcess);
 
 /* ============================================================
    Form submission
